@@ -126,6 +126,7 @@ all_platforms="${all_platforms} loongarch64-linux-gcc"
 all_platforms="${all_platforms} mips32-linux-gcc"
 all_platforms="${all_platforms} mips64-linux-gcc"
 all_platforms="${all_platforms} ppc64le-linux-gcc"
+all_platforms="${all_platforms} riscv64-linux-gcc"
 all_platforms="${all_platforms} sparc-solaris-gcc"
 all_platforms="${all_platforms} x86-android-gcc"
 all_platforms="${all_platforms} x86-darwin8-gcc"
@@ -251,6 +252,7 @@ ARCH_LIST="
     x86_64
     ppc
     loongarch
+    riscv64
 "
 ARCH_EXT_LIST_X86="
     mmx
