@@ -126,7 +126,7 @@ all_platforms="${all_platforms} loongarch64-linux-gcc"
 all_platforms="${all_platforms} mips32-linux-gcc"
 all_platforms="${all_platforms} mips64-linux-gcc"
 all_platforms="${all_platforms} ppc64le-linux-gcc"
-all_platforms="${all_platforms} riscv64-unknown-linux-gnu"
+all_platforms="${all_platforms} riscv64-unknown-linux-gnu-gcc"
 all_platforms="${all_platforms} sparc-solaris-gcc"
 all_platforms="${all_platforms} x86-android-gcc"
 all_platforms="${all_platforms} x86-darwin8-gcc"
@@ -675,6 +675,11 @@ process_toolchain() {
         # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=77728
         if enabled arm; then
           check_add_cxxflags -Wno-psabi
+        fi
+
+	if enabled riscv64; then
+	  check_add_cxxflags -march=rv64gcv
+	  check_add_cflags -march=rv64gcv
         fi
 
         # Enforce C++11 compatibility.
