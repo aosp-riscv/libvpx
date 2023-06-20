@@ -13,6 +13,15 @@ LIBVPX_TEST_SRCS-yes += test_vectors.h
 LIBVPX_TEST_SRCS-yes += util.h
 LIBVPX_TEST_SRCS-yes += video_source.h
 
+## FOR RISCV64
+## 
+## Test entry for riscv64 cpu and vector processor
+ifeq ($(VPX_ARCH_RISCV64), yes)
+    LIBVPX_TEST_SRCS-yes += test_rvv.cc
+endif
+
+
+
 ##
 ## BLACK BOX TESTS
 ##
