@@ -861,6 +861,10 @@ process_common_toolchain() {
       soft_enable lasx
       enable_feature loongarch
       ;;
+    riscv*)
+      soft_enable rvv
+      enable_feature risv
+      ;;
   esac
 
   # PIC is probably what we want when building shared libs

@@ -51,3 +51,7 @@ PORTS_SRCS-$(VPX_ARCH_LOONGARCH) += loongarch.h
 ifeq ($(VPX_ARCH_MIPS), yes)
 PORTS_SRCS-yes += asmdefs_mmi.h
 endif
+
+ifeq ($(VPX_ARCH_RISCV64), yes)
+	PORTS_SRCS-yes += riscv.h
+endif

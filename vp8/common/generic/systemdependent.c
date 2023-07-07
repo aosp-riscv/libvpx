@@ -20,6 +20,8 @@
 #include "vpx_ports/mips.h"
 #elif VPX_ARCH_LOONGARCH
 #include "vpx_ports/loongarch.h"
+#elif VPX_ARCH_RISCV64
+#include "vpx_ports/riscv.h"
 #endif
 #include "vp8/common/onyxc_int.h"
 #include "vp8/common/systemdependent.h"

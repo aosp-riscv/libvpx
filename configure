@@ -272,6 +272,10 @@ ARCH_EXT_LIST_LOONGSON="
     lasx
 "
 
+ARCH_EXT_LIST_RISCV="
+    rvv
+"
+
 ARCH_EXT_LIST="
     neon
     neon_asm
@@ -286,6 +290,8 @@ ARCH_EXT_LIST="
     vsx
 
     ${ARCH_EXT_LIST_LOONGSON}
+    
+    ${ARCH_EXT_LIST_RISCV}
 "
 HAVE_LIST="
     ${ARCH_EXT_LIST}
