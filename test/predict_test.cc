@@ -350,6 +350,15 @@ INSTANTIATE_TEST_SUITE_P(
                       make_tuple(4, 4, &vp8_sixtap_predict4x4_mmi)));
 #endif
 
+#if HAVE_RVV
+INSTANTIATE_TEST_SUITE_P(
+    RVV, SixtapPredictTest,
+    ::testing::Values(make_tuple(16, 16, &vp8_sixtap_predict16x16_rvv),
+                      make_tuple(8, 8, &vp8_sixtap_predict8x8_rvv),
+                      make_tuple(8, 4, &vp8_sixtap_predict8x4_rvv),
+                      make_tuple(4, 4, &vp8_sixtap_predict4x4_rvv)));
+#endif
+
 class BilinearPredictTest : public PredictTestBase {};
 
 TEST_P(BilinearPredictTest, TestWithRandomData) {
