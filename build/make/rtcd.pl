@@ -418,6 +418,37 @@ EOF
   common_bottom;
 }
 
+sub riscv() {
+  determine_indirection("c", @ALL_ARCHS);
+
+  # Assign the helper variable for each enabled extension
+  foreach my $opt (@ALL_ARCHS) {
+    my $opt_uc = uc $opt;
+    eval "\$have_${opt}=\"flags & HAS_${opt_uc}\"";
+  }
+
+  common_top;
+  print <<EOF;
+#include "vpx_config.h"
+
+#ifdef RTCD_C
+#include "vpx_ports/riscv.h"
+static void setup_rtcd_internal(void)
+{
+    int flags = riscv_cpu_caps();
+
+    (void)flags;
+EOF
+
+  set_function_pointers("c", @ALL_ARCHS);
+
+  print <<EOF;
+}
+#endif
+EOF
+  common_bottom;
+}
+
 sub unoptimized() {
   determine_indirection "c";
   common_top;
@@ -497,6 +528,9 @@ if ($opts{arch} eq 'x86') {
 } elsif ($opts{arch} =~ /loongarch/ ) {
   @ALL_ARCHS = filter(qw/lsx lasx/);
   loongarch;
+} elsif ($opts{arch} =~ /riscv/ ) {
+  @ALL_ARCHS = filter(qw/rvv/);
+  riscv;
 } else {
   unoptimized;
 }
