@@ -157,6 +157,10 @@ $(BUILD_PFX)%_lsx.c.o:  CFLAGS += -mlsx
 $(BUILD_PFX)%_lasx.c.d: CFLAGS += -mlasx
 $(BUILD_PFX)%_lasx.c.o: CFLAGS += -mlasx
 
+# RISCV
+$(BUILD_PFX)%_rvv.c.d:  CFLAGS += -march=rv64gcv
+$(BUILD_PFX)%_rvv.c.o:  CFLAGS += -march=rv64gcv
+
 $(BUILD_PFX)%.c.d: %.c
 	$(if $(quiet),@echo "    [DEP] $@")
 	$(qexec)mkdir -p $(dir $@)

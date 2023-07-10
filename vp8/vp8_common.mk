@@ -146,4 +146,7 @@ VP8_COMMON_SRCS-$(HAVE_NEON)  += common/arm/neon/mbloopfilter_neon.c
 VP8_COMMON_SRCS-$(HAVE_NEON)  += common/arm/neon/shortidct4x4llm_neon.c
 VP8_COMMON_SRCS-$(HAVE_NEON)  += common/arm/neon/sixtappredict_neon.c
 
+# common (rvv intrinsics)
+VP8_COMMON_SRCS-$(HAVE_RVV) += common/riscv/sixtap_predict_rvv.c
+
 $(eval $(call rtcd_h_template,vp8_rtcd,vp8/common/rtcd_defs.pl))
