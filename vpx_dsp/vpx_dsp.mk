@@ -421,6 +421,9 @@ DSP_SRCS-$(HAVE_LSX)    += loongarch/variance_lsx.c
 DSP_SRCS-$(HAVE_LSX)    += loongarch/sub_pixel_variance_lsx.c
 DSP_SRCS-$(HAVE_LSX)    += loongarch/avg_pred_lsx.c
 
+DSP_SRCS-$(HAVE_RVV)    += riscv/avg_pred_rvv.c
+
+
 DSP_SRCS-$(HAVE_MMI)    += mips/variance_mmi.c
 
 DSP_SRCS-$(HAVE_SSE2)   += x86/avg_pred_sse2.c

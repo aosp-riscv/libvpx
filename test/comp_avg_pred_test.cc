@@ -227,6 +227,11 @@ INSTANTIATE_TEST_SUITE_P(NEON, AvgPredTestLBD,
                          ::testing::Values(&vpx_comp_avg_pred_neon));
 #endif  // HAVE_NEON
 
+#if HAVE_RVV
+INSTANTIATE_TEST_SUITE_P(RVV, AvgPredTestLBD,
+                         ::testing::Values(&vpx_comp_avg_pred_rvv));
+#endif  // HAVE_RVV
+
 #if HAVE_VSX
 INSTANTIATE_TEST_SUITE_P(VSX, AvgPredTestLBD,
                          ::testing::Values(&vpx_comp_avg_pred_vsx));
