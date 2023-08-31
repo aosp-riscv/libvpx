@@ -11,6 +11,10 @@
 #ifndef VPX_VPX_PORTS_RISCV_H_
 #define VPX_VPX_PORTS_RISCV_H_
 
+#ifdef __riscv_v_intrinsic
+#include <riscv_vector.h>
+#endif/* __riscv_v_intrinsic */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -24,3 +28,4 @@ int riscv_cpu_caps(void);
 #endif
 
 #endif  // VPX_VPX_PORTS_RISCV_H_
+
