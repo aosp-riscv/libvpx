@@ -1,4 +1,7 @@
+#ifdef __riscv_v_intrinsic
 #include <riscv_vector.h>
+#endif /* __riscv_v_intrinsic */
+
 #include <stdio.h>
 #include "./vpx_config.h"
 #include "./vp8_rtcd.h"
