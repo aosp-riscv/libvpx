@@ -413,6 +413,8 @@ DSP_SRCS-$(HAVE_NEON)   += arm/avg_pred_neon.c
 DSP_SRCS-$(HAVE_NEON)   += arm/subpel_variance_neon.c
 DSP_SRCS-$(HAVE_NEON)   += arm/variance_neon.c
 
+DSP_SRCS-$(HAVE_RVV)   += riscv/avg_pred_rvv.c
+
 DSP_SRCS-$(HAVE_MSA)    += mips/variance_msa.c
 DSP_SRCS-$(HAVE_MSA)    += mips/sub_pixel_variance_msa.c
 
